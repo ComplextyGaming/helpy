@@ -1,0 +1,71 @@
+.container-games{
+  width: 100%;
+  background: #2E2E2E;
+}
+
+p{
+  margin: 0;
+}
+
+.container-games div.card-game:nth-child(2n+1){
+  background: rgb(39, 39, 39);
+  color: white;
+}
+
+.container-games div.card-game:nth-child(2n){
+  background: #FFFFFF;
+  color: #4B4B4B;
+}
+
+.container-games div.card-game{
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+}
+
+.container-games div.grid-container:hover{
+  transform: scale(1.1);
+}
+
+.container-games div.grid-container{
+  transition: transform 0.3s ease-in;
+  cursor: pointer;
+  display: grid;
+  grid-template:  'title . icon' auto
+                  'desc . icon' auto/
+                  500px 150px 250px;
+}
+
+.container-games .card-game .title{
+  grid-area: title;
+}
+
+.container-games .card-game .title p{
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding: 0.8em 0;
+}
+
+.container-games .card-game .desc{
+  grid-area: desc;
+}
+
+.container-games .card-game .desc p{
+  font-size: 1.1rem;
+  padding: 0.8em 0;
+}
+
+.container-games .card-game .icon{
+  grid-area: icon;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.container-games .card-game .icon .img{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgb(255, 179, 179);
+}
+

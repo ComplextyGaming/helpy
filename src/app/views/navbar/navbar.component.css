@@ -1,0 +1,41 @@
+.nav-bar{
+  width: 100%;
+  background: rgb(212, 212, 212);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-bar .nav-card{
+  display: inline-flex;
+}
+
+.nav-bar .title{
+  color: rgb(46, 46, 46);
+  font-weight: bold;
+  font-size: 2rem;
+  padding: 0.2em 0.3em;
+  cursor: pointer;
+}
+
+.nav-bar .nav-card.desc{
+  display: flex;
+  align-items: center;
+}
+.nav-bar .icon-desc{
+  font-size: 3rem;
+  width: 50px;
+  text-align: center;
+  height: 100%;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.nav-bar .info-desc{
+  font-size: 0.7rem;
+  margin-right: 0.4em;
+}
+
+.nav-bar .info-desc p{
+  margin: 0;
+}

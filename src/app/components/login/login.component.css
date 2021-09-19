@@ -1,0 +1,120 @@
+p{
+  margin: 0;
+}
+
+.container-login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 500px;
+  background: #2E2E2E;
+  margin: 0 auto;
+  flex-direction: column;
+  padding: 1.5em 0;
+}
+
+.container-login .title{
+  font-size: 2.5rem;
+  color: white;
+  font-weight: bold;
+  margin: 0 0 1.5em 0;
+}
+
+.container-login .card-login{
+  width: 450px;
+  background: white;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container-login .img{
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  background: rgb(255, 251, 213);
+  margin: 1.5em 0;
+}
+
+.container-login .input{
+  width: 60%;
+  margin: 1em 0 0 0;
+  display: flex;
+  align-items: center;
+}
+
+.container-login input{
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.75em 0.7em;
+  border-radius: 0.5em;
+  border: 1px solid #a1a1a1;
+  outline: none;
+}
+
+.container-login input:focus{
+  border: 1px solid #434343;
+}
+
+.container-login .forget{
+  width: 80%;
+  color: #515151;
+  margin: 1.1em 0;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-login .button{
+  width: 80%;
+  margin: 0 0 1em 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.container-login .button button{
+  font-size: 1rem;
+  width: 120px;
+  padding: 0.65em 0;
+  border-radius: 0.4em;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+
+.container-login .button .register{
+  background: #a0a0a0;
+}
+
+.container-login .button .register:active{
+  background: #7a7a7a;
+}
+
+.container-login .button .login{
+  background: #383838;
+}
+
+.container-login .button .login:active{
+  background: #696969;
+}
+
+@media (max-width: 1200px) {
+  .container-login{
+    background: rebeccapurple;
+    width: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  .container-login .card-login{
+    width: 100%;
+    border-radius: 0;
+  }
+}

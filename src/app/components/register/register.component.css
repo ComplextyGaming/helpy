@@ -1,0 +1,166 @@
+p{
+  margin: 0;
+}
+
+.container-register{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #2E2E2E;
+  margin: 0 auto;
+  flex-direction: column;
+  padding: 4em 0;
+}
+
+.container-register .title{
+  font-size: 2.5rem;
+  color: white;
+  font-weight: bold;
+  margin: 0 0 1.5em 0;
+}
+
+.container-register .card-register-all{
+  width: 900px;
+  display: flex;
+}
+
+.container-register .card-register-special{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container-register .card-register-special .img{
+  width: 145px;
+  height: 145px;
+  border-radius: 50%;
+  background: rgb(254, 255, 219);
+  margin: 2em 0;
+}
+
+.container-register .card-register-special button{
+  width: 80%;
+  font-size: 1rem;
+  padding: 0.65em 0;
+  margin: 0.7em 0 0 0;
+  border-radius: 0.3em;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.container-register .card-register-special .facebook{
+  background: #0088FF;
+}
+
+.container-register .card-register-special .facebook:active{
+  background: #006ac7;
+}
+
+.container-register .card-register-special .instagram{
+  background-image: linear-gradient(to right, #FEDA75, #FA7E1E, #D62976, #962FBF, #4F5BD5);
+}
+
+.container-register .card-register-special .instagram:active{
+  background-image: linear-gradient(to right, #daba63, #dd6d17, #9b1c55, #722292, #3c45a3);
+}
+
+.container-register .card-register-special .gmail{
+  background: #4285F4;
+}
+
+.container-register .card-register-special .gmail:active{
+  background: #3164b6;
+}
+
+.container-register .card-register{
+  display: flex;
+  flex: 1;
+  background: white;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 1em 0;
+}
+
+.container-register .card-register .input{
+  width: 80%;
+  margin: 1em 0 0 0;
+  display: flex;
+  align-items: center;
+}
+
+.container-register .card-register input{
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.75em 0.7em;
+  border-radius: 0.5em;
+  border: 1px solid #a1a1a1;
+  outline: none;
+}
+
+.container-register .card-register input:focus{
+  border: 1px solid #434343;
+}
+
+.container-register .card-register .button{
+  width: 80%;
+  margin: 1em 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.container-register .card-register .button button{
+  font-size: 1rem;
+  width: 120px;
+  padding: 0.65em 0;
+  border-radius: 0.4em;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+
+.container-register .card-register .button .register{
+  background: #383838;
+}
+
+.container-register .card-register .button .register:active{
+  background: #696969;
+}
+
+@media (max-width: 1200px) {
+  .container-register{
+    width: 100%;
+  }
+}
+
+@media (max-width: 920px) {
+  .container-register{
+    width: 100%;
+  }
+
+  .container-register .card-register-all{
+    flex-direction:column;
+    width: 100%;
+  }
+
+  .container-register .card-register{
+    background: none;
+  }
+
+  .container-register .card-register .button .register{
+    background: #9e9e9e;
+  }
+}
+
+@media (max-width: 450px) {
+  .container-register .card-login{
+    width: 100%;
+    border-radius: 0;
+  }
+}
