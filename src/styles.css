@@ -2,3 +2,29 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.expert.title{
+  text-align: center;
+  font-size: 2.2rem;
+  color: var(--primary-intense);
+  font-weight: bold;
+  padding: 1.5em;
+}
+
+.expert.desc{
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--primary-intense);
+  width: 450px;
+  margin: 0 auto;
+  padding: 1.5em;
+}
+
+@media (max-width: 800px) {
+  .expert.desc{
+    width: 90%;
+    margin: 0 auto;
+    padding: 1.5em 0;
+  }
+}
