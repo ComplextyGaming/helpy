@@ -67,5 +67,11 @@ p{
   height: 120px;
   border-radius: 50%;
   background: rgb(255, 179, 179);
+  overflow: hidden;
+}
+
+.container-games .card-game .icon .img img{
+  width: 100%;
+  height: 100%;
 }
 
