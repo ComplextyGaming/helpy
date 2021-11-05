@@ -1,0 +1,50 @@
+div.container-de div.materials{
+  width: 100%;
+  background: var(--background-aux);
+}
+
+div.container-de div.carrouselMaterials{
+  height: 350px;
+  width: 780px;
+  margin: 0 auto;
+  background: var(--primary-intense );
+}
+
+div.container-de div.button{
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+div.container-de div.button button{
+  background: var(--primary-intense);
+  color: var(--second);
+  font-size: 1.2rem;
+  padding: 0.2em 1.1em;
+  border-radius: 0.4em;
+}
+
+div.container-de div.social p.title{
+  text-align: start;
+}
+
+div.container-de div.categories:nth-child(2n+1){
+  background: var(--primary);
+}
+
+div.container-de div.categories:nth-child(2n+1) p.desc,
+div.container-de div.categories:nth-child(2n+1) p.title{
+  color: var(--second);
+}
+
+@media (max-width: 800px){
+
+  div.container-de div.infoexpert mat-card{
+    text-align: center;
+  }
+
+  div.container-de div.carrouselMaterials{
+    width: 90%;
+  }
+
+}

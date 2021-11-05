@@ -10,19 +10,23 @@ import { HttpGenericService } from 'src/app/services/general/http-generic.servic
 export class GamesComponent implements OnInit {
 
   games: any
+  loading: any
 
   constructor(private httpDataGeneric: HttpGenericService<Game>) {
+
+    this.games = [{} as Game]
     this.httpDataGeneric.setPath("https://helpy-api-upc.herokuapp.com/api/games")
   }
 
   ngOnInit(): void {
     this.getAllList()
+
   }
 
   getAllList(){
     this.httpDataGeneric.getList().subscribe((response: any) => {
       this.games = response;
-      console.log(this.games)
+      this.loading = true
     })
   }
 

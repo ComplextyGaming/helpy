@@ -19,6 +19,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule }  from '@angular/material/input';
 import { MatFormFieldModule }  from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http'
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 
 import { MatCardModule } from '@angular/material/card'
 import { MatGridListModule } from '@angular/material/grid-list'
@@ -28,9 +29,25 @@ import { MaterialsComponent } from './components/materials/materials.component';
 import { DetailexpertComponent } from './components/detailexpert/detailexpert.component';
 import { RevisionComponent } from './components/revision/revision.component';
 import { ScheduleComponent } from './components/schedule/schedule.component'
+import { GamesComponent } from './components/games/games.component';
+import { LoaderComponent } from './views/loader/loader.component'
 
 @NgModule({
   exports: [
+    HttpClientModule,
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatInputModule,
+    MatFormFieldModule,
+    RouterModule,
+    MatCardModule,
+    MatGridListModule,
+    MatChipsModule,
+    MatProgressSpinnerModule,
+    MatButtonModule,
   ],
   declarations: [
     AppComponent,
@@ -46,6 +63,8 @@ import { ScheduleComponent } from './components/schedule/schedule.component'
     DetailexpertComponent,
     RevisionComponent,
     ScheduleComponent,
+    GamesComponent,
+    LoaderComponent
   ],
   imports: [
     HttpClientModule,
@@ -60,7 +79,8 @@ import { ScheduleComponent } from './components/schedule/schedule.component'
     MatCardModule,
     MatGridListModule,
     MatChipsModule,
-    MatButtonModule
+    MatProgressSpinnerModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -16,36 +16,47 @@ export class ListExpertsComponent implements OnInit, OnDestroy {
 
   id: number
   params: any
-  experts: any
-  expertData: Expert
+  experts: Array<Expert>
+  game: Game
+  loadingExperts: any
+  loadingGame: any
 
 
-  constructor(private httpDataService: HttpGenericService<Game>,private route: ActivatedRoute) {
+  constructor(private httpDataServiceGame: HttpGenericService<Game>,
+    private httpDataExpert: HttpExpertService,
+    private route: ActivatedRoute) {
     this.route.params.subscribe(
       (params) => {
         this.params = params
       }
     );
 
+    this.game = {} as Game
+    this.experts = [{} as Expert]
     this.id = this.params.id
-    this.expertData = {} as Expert
 
-    this.httpDataService.setPath("https://helpy-api-upc.herokuapp.com/api/games")
+    this.httpDataServiceGame.setPath("https://helpy-api-upc.herokuapp.com/api/games")
   }
 
   ngOnInit(): void {
-    this.getAllExperts();
+    this.getGameById()
+    this.getExpertsByGameId()
   }
 
   ngOnDestroy(): void{
   }
 
-  getAllExperts(): void {
-    this.httpDataService.getList().subscribe((response: any) => {
+  getExpertsByGameId(): void{
+    this.httpDataExpert.getListExpertByGameId(this.id).subscribe( (response:any) => {
       this.experts = response
-      console.log(this.experts)
+      this.loadingExperts = true
     })
-    console.log("Hola")
   }
 
+  getGameById(): void{
+    this.httpDataServiceGame.getById(this.id).subscribe( (response:any) => {
+      this.game = response
+      this.loadingGame = true
+    })
+  }
 }

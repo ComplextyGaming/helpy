@@ -49,7 +49,7 @@ const routes: Routes = [
     component: MaterialsComponent
   },
   {
-    path: 'detailexpert',
+    path: 'games/:gameId/expert/:expertId',
     component: DetailexpertComponent
   },
   {
@@ -66,10 +66,11 @@ const routes: Routes = [
 @NgModule({
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, {
+      scrollPositionRestoration: 'enabled', // Add options right here
+    })
   ],
   declarations: [
-    GamesComponent
   ],
   exports: [RouterModule]
 })

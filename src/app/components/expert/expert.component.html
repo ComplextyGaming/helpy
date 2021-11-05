@@ -1,15 +1,12 @@
-<div class="container-e">
+<div class="container-e" *ngIf="loadingExpert; else loader">
   <div class="conexpert">
     <div class="expert">
       <div class="infoexpert">
         <mat-card>
           <mat-card-title-group>
-            <mat-card-title>Smash</mat-card-title>
+            <mat-card-title>{{expert.firstName}}</mat-card-title>
             <mat-card-subtitle>
-              Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua.
-              Ut enim ad minim v
+              {{expert.description}}
             </mat-card-subtitle>
           </mat-card-title-group>
 
@@ -32,7 +29,9 @@
     </div>
   </div>
 </div>
-
+<ng-template #loader>
+  <app-loader></app-loader>
+</ng-template>
 <style>
   div.conexpert{
     width: 100%;

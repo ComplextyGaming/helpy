@@ -1,8 +1,11 @@
 export interface Expert {
+  brithdate: Date;
+  description: string;
+  email: string;
+  firstName: string;
+  gameId: number;
   id: number;
-  name: string;
-  storyLine: string;
-  summary: string;
-  coverUrl: string;
-  backgroundImageUrl: string;
+  lastName: string,
+  phone: string,
+  username: string
 }

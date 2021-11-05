@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Expert } from 'src/app/models/expert/expert';
+import { HttpGenericService } from '../../services/general/http-generic.service'
+
 
 @Component({
   selector: 'app-detailexpert',
@@ -7,7 +11,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailexpertComponent implements OnInit {
 
-  constructor() { }
+  params: any
+  expertId: number
+
+  constructor(private httpGenericService: HttpGenericService<Expert>,
+              private router: ActivatedRoute) {
+
+    this.router.params.subscribe(
+      (params) => {
+        this.params = params
+      }
+    )
+
+    this.expertId = this.params.expertId
+    this.httpGenericService.setPath("https://helpy-api-upc.herokuapp.com/api/experts")
+  }
 
   ngOnInit(): void {
   }

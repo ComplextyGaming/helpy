@@ -1,31 +1,32 @@
-<div class="container-le">
+<div class="container-le" *ngIf="loadingExperts && loadingGame; else loader">
   <div class="game">
-    <mat-card>
-      <mat-card-title-group>
-        <mat-card-title>Dota 2</mat-card-title>
-        <mat-card-subtitle>orem ipsum dolor sit amet, consectetur
-          adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua.
-          Ut enim ad minim v</mat-card-subtitle>
-      </mat-card-title-group>
-
-    </mat-card>
-    <div class="img">
-
+    <div class="game-detail">
+      <mat-card>
+        <mat-card-title-group>
+          <mat-card-title>{{ game.name }}</mat-card-title>
+          <mat-card-subtitle>{{ game.summary }}</mat-card-subtitle>
+        </mat-card-title-group>
+      </mat-card>
+      <div class="img">
+      </div>
+    </div>
+    <div class="backgroundimg">
+      <img src="{{ game.backgroundImageUrl }}">
+      <div class="opacity"></div>
     </div>
   </div>
 
-  <div class="expert" *ngFor="let game of experts">
+  <div class="expert" *ngFor="let expert of experts">
     <div class="infoexpert">
       <div class="img">
       </div>
       <mat-card>
         <mat-card-title-group class="card">
-          <mat-card-title class="title">{{game.name}}</mat-card-title>
+          <mat-card-title class="title">{{expert.firstName}}</mat-card-title>
           <mat-card-title>
             <div class="imgcard"></div>
           </mat-card-title>
-          <mat-card-subtitle>{{game.summary}}</mat-card-subtitle>
+          <mat-card-subtitle>{{expert.description}}</mat-card-subtitle>
         </mat-card-title-group>
         <mat-card-content class="chip">
           <mat-chip-list aria-label="Fish selection">
@@ -39,188 +40,10 @@
       </mat-card>
     </div>
     <div class="button">
-      <button mat-button>Informacion</button>
+      <button mat-button [routerLink]="['/games/', game.id, 'expert', expert.id]">Informacion {{game.id}} + {{expert.id}}</button>
     </div>
   </div>
-
 </div>
-
-<style>
-
-  div.container-le div.expert{
-    padding: 30px 0;
-    background: var(--background-aux);
-  }
-
-  div.container-le div.button{
-    width: 350px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-around;
-
-  }
-
-  div.container-le div.button button{
-    font-size: 1.3rem;
-    padding: 0.15em 1.3em;
-    border-radius: 0.5em;
-    color: var(--second);
-    background: var(--primary-intense);
-    margin-bottom: 20px;
-  }
-
-  div.container-le div.expert:nth-child(2n+1) div.button button,
-  div.container-le div.expert:nth-child(2n+1) div.button button{
-    color: var(--primary);
-    background: var(--second-intense);
-  }
-
-  div.container-le div.expert:nth-child(2n+1){
-    background: var(--primary);
-    color: var(--second);
-  }
-
-  div.container-le div.expert:nth-child(2n) mat-card mat-card-title,
-  div.container-le div.expert:nth-child(2n) mat-card mat-card-subtitle{
-    color: var(--primary);
-  }
-
-  div.container-le div.expert:nth-child(2n+1) mat-card mat-card-title,
-  div.container-le div.expert:nth-child(2n+1) mat-card mat-card-subtitle{
-    color: var(--second);
-  }
-
-  div.container-le div.expert:nth-child(2n+1) mat-chip{
-    background: var(--second);
-    color: var(--primary);
-  }
-
-  div.container-le .infoexpert{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    padding: 25px 0;
-    margin-bottom: 50px;
-  }
-
-  div.container-le .infoexpert .img{
-    width: 180px;
-    height: 180px;
-    background: rgb(207, 207, 207);
-    border-radius: 50%;
-    margin-right: 80px;
-  }
-
-  div.container-le .infoexpert mat-card {
-    max-width: 450px;
-    background: none;
-    box-shadow: none;
-  }
-
-  div.container-le .infoexpert mat-card-title{
-    margin: 0 0 1em 0 ;
-    font-size: 1.8rem;
-  }
-
-  div.container-le .infoexpert mat-card-subtitle{
-    font-size: 1rem;
-  }
-
-  div.container-le .infoexpert mat-chip{
-    background: var(--primary);
-  }
-
-  p{
-    color: var(--second);
-  }
-
-  div.container-le div.game{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 650px;
-    background: var(--primary);
-  }
-
-  div.container-le div.game mat-card{
-    background: none;
-    box-shadow: none;
-    max-width: 500px;
-    text-align: justify;
-    margin: 0 5px;
-  }
-
-  div.container-le div.game mat-card mat-card-title{
-    font-size: 2.4rem;
-    margin-bottom: 35px;
-    font-weight: bold;
-  }
-
-  div.container-le div.game mat-card mat-card-subtitle{
-    font-size: 1.3rem;
-    color: var(--second);
-  }
-
-  div.container-le div.game mat-card img{
-    margin: 0 50px;
-  }
-
-  div.container-le div.game div.img{
-    width: 160px;
-    height: 160px;
-    background: rebeccapurple;
-    border-radius: 50%;
-  }
-
-  div.imgcard{
-    position: none;
-  }
-
-  @media (max-width: 800px){
-
-    div.container-le div.game{
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      flex-direction: column;
-    }
-
-    div.container-le div.game mat-card,
-    div.container-le mat-card{
-      text-align: center;
-    }
-
-    .card{
-      display: flex;
-      flex-direction: column;
-    }
-
-    div.imgcard{
-      display: flex;
-      width: 180px;
-      height: 180px;
-      margin: 10px 0;
-      border-radius: 50%;
-      background: rgb(207, 207, 207);
-      margin: 0 auto;
-    }
-
-    div.container-le .infoexpert .img{
-      display: none;
-    }
-
-    div.container-le div.game div.img{
-      width: 150px;
-      height: 150px;
-      background: rebeccapurple;
-      border-radius: 50%;
-      bottom: 80px;
-    }
-
-    div.container-le .chip{
-      justify-content: space-around;
-      display: flex;
-    }
-  }
-</style>
+<ng-template #loader>
+  <app-loader></app-loader>
+</ng-template>

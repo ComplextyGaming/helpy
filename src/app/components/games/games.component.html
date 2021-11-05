@@ -1,4 +1,4 @@
-<div class="container-games">
+<div class="container-games" *ngIf="loading; else loader">
   <div class="card-game" [routerLink]="['/games/', game.id]" *ngFor="let game of games">
     <div class="grid-container">
       <div class="title">
@@ -9,9 +9,11 @@
       </div>
       <div class="icon">
         <div class="img">
-          <img src="{{game.backgroundImageUrl}}">
         </div>
       </div>
     </div>
   </div>
 </div>
+<ng-template #loader>
+  <app-loader></app-loader>
+</ng-template>
