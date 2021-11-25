@@ -30,7 +30,9 @@ import { DetailexpertComponent } from './components/detailexpert/detailexpert.co
 import { RevisionComponent } from './components/revision/revision.component';
 import { ScheduleComponent } from './components/schedule/schedule.component'
 import { GamesComponent } from './components/games/games.component';
-import { LoaderComponent } from './views/loader/loader.component'
+import { LoaderComponent } from './views/loader/loader.component';
+import { ReporteComponent } from './components/reporte/reporte.component'
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 @NgModule({
   exports: [
@@ -48,6 +50,7 @@ import { LoaderComponent } from './views/loader/loader.component'
     MatChipsModule,
     MatProgressSpinnerModule,
     MatButtonModule,
+    PdfViewerModule,
   ],
   declarations: [
     AppComponent,
@@ -64,7 +67,8 @@ import { LoaderComponent } from './views/loader/loader.component'
     RevisionComponent,
     ScheduleComponent,
     GamesComponent,
-    LoaderComponent
+    LoaderComponent,
+    ReporteComponent
   ],
   imports: [
     HttpClientModule,
@@ -81,6 +85,7 @@ import { LoaderComponent } from './views/loader/loader.component'
     MatChipsModule,
     MatProgressSpinnerModule,
     MatButtonModule,
+    PdfViewerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
