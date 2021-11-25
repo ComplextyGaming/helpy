@@ -37,7 +37,7 @@ const routes: Routes = [
     component: ExpertComponent
   },
   {
-    path: 'profile',
+    path: 'profile/:id',
     component: ProfileComponent
   },
   {
@@ -57,7 +57,7 @@ const routes: Routes = [
     component: RevisionComponent
   },
   {
-    path: 'schedule',
+    path: 'expert/:expertId/schedule',
     component: ScheduleComponent
   }
 

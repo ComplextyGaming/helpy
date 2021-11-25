@@ -48,3 +48,19 @@ div.container-de div.categories:nth-child(2n+1) p.title{
   }
 
 }
+
+.button-detail {
+  background-color: #35CF4A;
+
+}
+.container-actions {
+
+  width: 50px;
+
+}
+.container-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}

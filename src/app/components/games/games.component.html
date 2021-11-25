@@ -8,7 +8,17 @@
         <p>{{ game.summary }}</p>
       </div>
       <div class="icon">
-        <div class="img">
+        <div *ngIf="game.id === 1" class="img">
+          <img src="assets/ccgo.png" width="100%">
+        </div>
+        <div *ngIf="game.id === 2" class="img">
+          <img src="assets/dota.png" width="100%">
+        </div>
+        <div *ngIf="game.id === 3" class="img">
+          <img src="assets/apex.png" width="100%">
+        </div>
+        <div *ngIf="game.id === 4" class="img">
+          <img src="assets/wzn.png" width="100%">
         </div>
       </div>
     </div>
