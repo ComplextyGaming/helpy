@@ -1,29 +1,25 @@
 <div class="container-m">
-  <div>
-    <app-expert></app-expert>
-  </div>
   <div class="materials">
     <p class="expert title">Materiales</p>
     <div class="flexmaterials">
       <div class="sidebar"></div>
       <div class="main">
-        <div class="material">
+        <div class="material" *ngFor="let material of materials">
           <div class="img">
 
           </div>
-          <div class="descount">
-            <p>20%</p>
+          <div class="descount" *ngIf="material.discount != 0">
+            <p>{{ material.discount }}</p>
           </div>
-          <p class="title">Sniper</p>
-          <mat-chip>Tag</mat-chip>
+          <p class="title">{{ material.id }}</p>
+          <div *ngFor="let tag of material.tags">
+            <mat-chip>{{ tag.name }}</mat-chip>
+          </div>
           <p class="desc">
-            Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit, sed do
+            {{ material.description }}
           </p>
-          <button mat-button>20.00</button>
+          <button mat-button>{{ material.cost }}</button>
         </div>
-        <div class="material"></div>
-        <div class="material"></div>
       </div>
     </div>
   </div>
@@ -107,7 +103,7 @@
   }
 
   div.container-m div.flexmaterials div.main div.material mat-chip{
-    padding: 0.1em 0.8em;
+    padding: 0.0em 0.8em;
     border-radius: 1em;
     font-size: 0.7rem;
     font-weight: bold;

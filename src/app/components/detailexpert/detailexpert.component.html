@@ -1,41 +1,7 @@
-<div class="container-de">
-  <div>
-    <app-expert [id]=expertId></app-expert>
-  </div>
-  <div class="materials categories">
-    <p class="expert title">Materiales</p>
-    <div class="carrouselMaterials">
-
-    </div>
-    <div class="button">
-      <button mat-button>Materiales</button>
-    </div>
-  </div>
-  <div class="schedule categories">
-    <p class="expert title">Horarios</p>
-    <p class="expert desc">
-      orem ipsum dolor sit amet, consectetur
-      adipiscing elit, sed do eiusmod tempor
-      incididunt ut labore et dolore magna aliqua.
-      Ut enim ad minim v
-    </p>
-    <div class="button">
-      <button mat-button>Horarios</button>
-    </div>
-  </div>
-  <div class="revision categories">
-    <p class="expert title">Revision</p>
-    <p class="expert desc">
-      orem ipsum dolor sit amet, consectetur
-      adipiscing elit, sed do eiusmod tempor
-      incididunt ut labore et dolore magna aliqua.
-      Ut enim ad minim v
-    </p>
-    <div class="button">
-      <button mat-button>Revisar</button>
-    </div>
-  </div>
-  <div class="social categories">
-    <p class="expert title">Mis redes:</p>
-  </div>
+<div *ngIf="loading; else loader">
+  <app-info-expert [expert]="expert"></app-info-expert>
+  <router-outlet></router-outlet>
 </div>
+<ng-template #loader>
+  <app-loader></app-loader>
+</ng-template>

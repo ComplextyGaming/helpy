@@ -11,23 +11,32 @@ import { HttpGenericService } from '../../services/general/http-generic.service'
 })
 export class DetailexpertComponent implements OnInit {
 
+  expert: Expert
   params: any
-  expertId: number
+  expertId: any
+  gameId: any
+  loading: any
 
-  constructor(private httpGenericService: HttpGenericService<Expert>,
-              private router: ActivatedRoute) {
+  constructor(private httpExpertService: HttpGenericService<Expert>, public router: ActivatedRoute) {
+    this.router.params.subscribe(data => {
+      this.params = data
+    })
 
-    this.router.params.subscribe(
-      (params) => {
-        this.params = params
-      }
-    )
-
+    this.httpExpertService.setPath("https://helpy-api-upc.herokuapp.com/api/experts");
     this.expertId = this.params.expertId
-    this.httpGenericService.setPath("https://helpy-api-upc.herokuapp.com/api/experts")
+    this.gameId = this.params.gameId
+
+    this.expert = {} as Expert
   }
 
   ngOnInit(): void {
+    this.getExpertById()
   }
 
+  getExpertById(){
+    this.httpExpertService.getById(this.expertId).subscribe(data => {
+      this.expert = data
+      this.loading = true
+    })
+  }
 }

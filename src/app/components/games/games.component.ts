@@ -20,7 +20,6 @@ export class GamesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllList()
-
   }
 
   getAllList(){
