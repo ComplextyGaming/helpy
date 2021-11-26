@@ -1,5 +1,8 @@
 <div class="container-home">
   <div class="container-principal">
+    <div>
+      <img src="assets/gamer.png">
+    </div>
     <div class="card-principal">
       <p>Hola Gamer, juegemos</p>
       <p>Legend of Legends</p>
@@ -18,12 +21,36 @@
         <div class="layer"></div>
         <div class="layer"></div>
       </div>
-      <div class="game-icon first"></div>
-      <div class="game-icon second"></div>
-      <div class="game-icon third"></div>
-      <div class="game-icon fourth"></div>
-      <div class="game-icon fifth"></div>
+      <div class="game-icon first">
+        <img src="assets/lol.png" width="100%" height="100%">
+      </div>
+      <div class="game-icon second">
+        <img src="assets/apex.png" width="100%" height="100%">
+      </div>
+      <div class="game-icon third">
+        <img class="dota-logo" src="assets/minecraft.png" width="100%" height="100%" >
+      </div>
+      <div class="game-icon fourth">
+        <img src="assets/dota.png"  height="100%">
+      </div>
+      <div class="game-icon fifth">
+        <img src="assets/ccgo.png" width="100%" height="100%">
+      </div>
     </div>
   </div>
-
+  <div class="expert-container container">
+    <div class="card-grid container">
+      <mat-card class="container-card" *ngFor="let expert of experts">
+        <mat-card-header>
+          <mat-card-title>{{ expert.username | uppercase }}</mat-card-title>
+        </mat-card-header>
+        <div class="crop-image">
+          <img src="assets/expert.jpg" alt="">
+        </div>
+        <mat-card-actions class="container-actions">
+          <a  mat-raised-button class="button-detail" [routerLink]="['/games', expert.gameId, 'expert', expert.id]">Solicitar</a>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
 </div>

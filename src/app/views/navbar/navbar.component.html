@@ -1,14 +1,41 @@
-<div class="nav-bar">
-  <div class="nav-card title">
-    <p class="title">Gola</p>
-  </div>
-  <div class="nav-card desc">
-    <div class="info-desc">
-      <p>Luciano</p>
-      <p>Luciano</p>
-    </div>
-    <div>
-      <mat-icon class="icon-desc">account_circle</mat-icon>
+<mat-toolbar>
+  <div class="total">
+    <div class="option">
+      <p class="title" routerLink="/">Goolan</p>
     </div>
   </div>
-</div>
+  <div class="total">
+    <div class="option">
+      <div class="hoverinput">
+        <input placeholder="Juego" />
+        <mat-icon>videogame_asset</mat-icon>
+      </div>
+    </div>
+  </div>
+  <div>
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+      routerLink="/games"
+    >
+      <mat-icon>videogame_asset</mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+      [routerLink]="['/profile', userId]"
+    >
+      <mat-icon class="person">person</mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+      (click)="loginService.cerrarSesion()"
+    >
+      <mat-icon>exit_to_app</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>

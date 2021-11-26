@@ -1,50 +1,29 @@
-<div class="container-games">
-  <div class="card-game">
+<div class="container-games" *ngIf="loading; else loader">
+  <div class="card-game" [routerLink]="['/games/', game.id]" *ngFor="let game of games">
     <div class="grid-container">
       <div class="title">
-        <p>Dota 2</p>
+        <p>{{ game.name }}</p>
       </div>
       <div class="desc">
-        <p>orem ipsum dolor sit amet, consectetur
-          adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua.
-          Ut enim ad minim v</p>
+        <p>{{ game.summary }}</p>
       </div>
       <div class="icon">
-        <div class="img"></div>
-      </div>
-    </div>
-  </div>
-  <div class="card-game">
-    <div class="grid-container">
-      <div class="title">
-        <p>Dota 2</p>
-      </div>
-      <div class="desc">
-        <p>orem ipsum dolor sit amet, consectetur
-          adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua.
-          Ut enim ad minim v</p>
-      </div>
-      <div class="icon">
-        <div class="img"></div>
-      </div>
-    </div>
-  </div>
-  <div class="card-game">
-    <div class="grid-container">
-      <div class="title">
-        <p>Dota 2</p>
-      </div>
-      <div class="desc">
-        <p>orem ipsum dolor sit amet, consectetur
-          adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua.
-          Ut enim ad minim v</p>
-      </div>
-      <div class="icon">
-        <div class="img"></div>
+        <div *ngIf="game.id === 1" class="img">
+          <img src="assets/ccgo.png" width="100%">
+        </div>
+        <div *ngIf="game.id === 2" class="img">
+          <img src="assets/dota.png" width="100%">
+        </div>
+        <div *ngIf="game.id === 3" class="img">
+          <img src="assets/apex.png" width="100%">
+        </div>
+        <div *ngIf="game.id === 4" class="img">
+          <img src="assets/wzn.png" width="100%">
+        </div>
       </div>
     </div>
   </div>
 </div>
+<ng-template #loader>
+  <app-loader></app-loader>
+</ng-template>

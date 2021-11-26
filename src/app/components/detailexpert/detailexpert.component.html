@@ -1,0 +1,7 @@
+<div *ngIf="loading; else loader">
+  <app-info-expert [expert]="expert"></app-info-expert>
+  <router-outlet></router-outlet>
+</div>
+<ng-template #loader>
+  <app-loader></app-loader>
+</ng-template>

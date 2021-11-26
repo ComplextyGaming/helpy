@@ -1,20 +1,43 @@
 <div class="container-login">
   <p class="title">Inicia Sesion</p>
   <div class="card-login">
-      <div class="img">
-      </div>
-      <div class="input">
-        <input placeholder="User">
-      </div>
-      <div class="input">
-        <input placeholder="Password">
-      </div>
-      <div class="forget">
-        <p>forgot your password?</p>
-      </div>
-      <div class="button">
-        <button class="register">Register</button>
-        <button class="login">Login</button>
-      </div>
+    <div class="">
+      <img
+        src="https://toppng.com/uploads/preview/report-abuse-conejo-gamer-115635382293kqckmnouo.png"
+        alt="login image"
+        class="img"
+      />
+    </div>
+    <div class="input">
+      <input
+        placeholder="Email"
+        [(ngModel)]="usuario"
+        class="email"
+        maxlength="256"
+        required
+        type="text"
+      />
+    </div>
+    <div class="input">
+      <input
+        placeholder="Password"
+        type="password"
+        name="password"
+        [(ngModel)]="clave"
+        class="password"
+        required
+        minlength="8"
+        maxlength="16"
+      />
+    </div>
+    <div class="forget">
+      <p>forgot your password?</p>
+    </div>
+    <div class="button">
+      <button class="register" [routerLink]="'/register'">Register</button>
+      <button class="login" type="button" (click)="iniciarSesion()">
+        Login
+      </button>
+    </div>
   </div>
 </div>

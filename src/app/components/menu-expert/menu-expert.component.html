@@ -1,0 +1,44 @@
+<div class="container-de" *ngIf="loading; else loader">
+  <div class="materials categories">
+    <p class="expert title">Materiales</p>
+    <p class="expert desc">
+      orem ipsum dolor sit amet, consectetur
+      adipiscing elit, sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim v
+    </p>
+    <div class="button">
+      <button mat-button [routerLink]="['/games/', gameId, 'expert', expertId, 'material']">Materiales</button>
+    </div>
+  </div>
+  <div class="schedule categories">
+    <p class="expert title">Horarios</p>
+    <p class="expert desc">
+      orem ipsum dolor sit amet, consectetur
+      adipiscing elit, sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim v
+    </p>
+    <div class="button">
+      <button mat-button [routerLink]="['/games/', gameId, 'expert', expertId, 'schedule']">Horario</button>
+    </div>
+  </div>
+  <div class="revision categories">
+    <p class="expert title">Revision</p>
+    <p class="expert desc">
+      orem ipsum dolor sit amet, consectetur
+      adipiscing elit, sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim v
+    </p>
+    <div class="button">
+      <button mat-button>Revisar</button>
+    </div>
+  </div>
+  <div class="social categories">
+    <p class="expert title">Mis redes:</p>
+  </div>
+</div>
+<ng-template #loader>
+  <app-loader></app-loader>
+</ng-template>

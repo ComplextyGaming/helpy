@@ -1,0 +1,49 @@
+<div class="container-le" *ngIf="loadingExperts && loadingGame; else loader">
+  <div class="game">
+    <div class="game-detail">
+      <mat-card>
+        <mat-card-title-group>
+          <mat-card-title>{{ game.name }}</mat-card-title>
+          <mat-card-subtitle>{{ game.summary }}</mat-card-subtitle>
+        </mat-card-title-group>
+      </mat-card>
+      <div class="img">
+      </div>
+    </div>
+    <div class="backgroundimg">
+      <img src="{{ game.backgroundImageUrl }}">
+      <div class="opacity"></div>
+    </div>
+  </div>
+
+  <div class="expert" *ngFor="let expert of experts">
+    <div class="infoexpert">
+      <div class="img">
+      </div>
+      <mat-card>
+        <mat-card-title-group class="card">
+          <mat-card-title class="title">{{expert.firstName}}</mat-card-title>
+          <mat-card-title>
+            <div class="imgcard"></div>
+          </mat-card-title>
+          <mat-card-subtitle>{{expert.description}}</mat-card-subtitle>
+        </mat-card-title-group>
+        <mat-card-content class="chip">
+          <mat-chip-list aria-label="Fish selection">
+            <mat-chip>Tag 1</mat-chip>
+            <mat-chip>Tag 2</mat-chip>
+            <mat-chip>Tag 3</mat-chip>
+            <mat-chip>Tag 4</mat-chip>
+            <mat-chip>Tag 1</mat-chip>
+          </mat-chip-list>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="button">
+      <button mat-button [routerLink]="['/games/', game.id, 'expert', expert.id, 'detail']">Informacion</button>
+    </div>
+  </div>
+</div>
+<ng-template #loader>
+  <app-loader></app-loader>
+</ng-template>

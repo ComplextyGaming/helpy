@@ -1,0 +1,215 @@
+div.container-le div.expert{
+  padding: 30px 0;
+  background: var(--background-aux);
+}
+
+div.container-le div.button{
+  width: 350px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+div.container-le div.button button{
+  font-size: 1.3rem;
+  padding: 0.15em 1.3em;
+  border-radius: 0.5em;
+  color: var(--second);
+  background: var(--primary-intense);
+  margin-bottom: 20px;
+}
+
+div.container-le div.expert:nth-child(2n+1) div.button button,
+div.container-le div.expert:nth-child(2n+1) div.button button{
+  color: var(--primary);
+  background: var(--second-intense);
+}
+
+div.container-le div.expert:nth-child(2n+1){
+  background: var(--primary);
+  color: var(--second);
+}
+
+div.container-le div.expert:nth-child(2n) mat-card mat-card-title,
+div.container-le div.expert:nth-child(2n) mat-card mat-card-subtitle{
+  color: var(--primary);
+}
+
+div.container-le div.expert:nth-child(2n+1) mat-card mat-card-title,
+div.container-le div.expert:nth-child(2n+1) mat-card mat-card-subtitle{
+  color: var(--second);
+}
+
+div.container-le div.expert:nth-child(2n+1) mat-chip{
+  background: var(--second);
+  color: var(--primary);
+}
+
+div.container-le .infoexpert{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 25px 0;
+  width: 750px;
+  margin: 0 auto 20px auto;
+}
+
+div.container-le .infoexpert .img{
+  width: 180px;
+  height: 180px;
+  background: rgb(207, 207, 207);
+  border-radius: 50%;
+  margin-right: 80px;
+}
+
+div.container-le .infoexpert mat-card {
+  width: 450px;
+  background: none;
+  box-shadow: none;
+}
+
+div.container-le .infoexpert mat-card-title{
+  margin: 0 0 1em 0 ;
+  font-size: 1.8rem;
+}
+
+div.container-le .infoexpert mat-card-subtitle{
+  font-size: 1rem;
+}
+
+div.container-le .infoexpert mat-chip{
+  background: var(--primary);
+}
+
+p{
+  color: var(--second);
+}
+
+div.container-le div.game{
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 650px;
+  background: var(--primary);
+}
+
+div.container-le div.game div.game-detail{
+  position: relative;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+div.container-le div.game div.backgroundimg{
+  position: absolute;
+  background: rebeccapurple;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+}
+
+div.container-le div.game div.backgroundimg div.opacity{
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  background: black;
+  position: absolute;
+}
+
+div.container-le div.game div.backgroundimg img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+div.container-le div.game mat-card{
+  background: none;
+  box-shadow: none;
+  max-width: 500px;
+  text-align: justify;
+  margin: 0 5px;
+}
+
+div.container-le div.game mat-card mat-card-title{
+  font-size: 2.4rem;
+  margin-bottom: 35px;
+  line-height: 1;
+  font-weight: bold;
+  text-align: center;
+}
+
+div.container-le div.game mat-card mat-card-subtitle{
+  font-size: 1.3rem;
+  color: var(--second);
+}
+
+div.container-le div.game mat-card img{
+  margin: 0 50px;
+}
+
+div.container-le div.game div.img{
+  width: 160px;
+  height: 160px;
+  background: rebeccapurple;
+  border-radius: 50%;
+}
+
+div.imgcard{
+  position: none;
+}
+
+@media (max-width: 800px){
+
+  div.container-le .infoexpert{
+    width: 100%;
+  }
+
+  div.container-le div.game{
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+  }
+
+  div.container-le div.game mat-card,
+  div.container-le mat-card{
+    text-align: center;
+  }
+
+  .card{
+    display: flex;
+    flex-direction: column;
+  }
+
+  div.imgcard{
+    display: flex;
+    width: 180px;
+    height: 180px;
+    margin: 10px 0;
+    border-radius: 50%;
+    background: rgb(207, 207, 207);
+    margin: 0 auto;
+  }
+
+  div.container-le .infoexpert .img{
+    display: none;
+  }
+
+  div.container-le div.game div.img{
+    width: 150px;
+    height: 150px;
+    background: rebeccapurple;
+    border-radius: 50%;
+    bottom: 80px;
+  }
+
+  div.container-le .chip{
+    justify-content: space-around;
+    display: flex;
+  }
+}

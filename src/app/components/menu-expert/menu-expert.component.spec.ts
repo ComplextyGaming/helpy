@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ExpertComponent } from './expert.component';
+import { MenuExpertComponent } from './menu-expert.component';
 
-describe('ExpertComponent', () => {
-  let component: ExpertComponent;
-  let fixture: ComponentFixture<ExpertComponent>;
+describe('MenuExpertComponent', () => {
+  let component: MenuExpertComponent;
+  let fixture: ComponentFixture<MenuExpertComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ExpertComponent ]
+      declarations: [ MenuExpertComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ExpertComponent);
+    fixture = TestBed.createComponent(MenuExpertComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

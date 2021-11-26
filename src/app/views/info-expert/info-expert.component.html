@@ -1,0 +1,31 @@
+<div class="container-e">
+  <div class="conexpert">
+    <div class="expert">
+      <div class="infoexpert">
+        <mat-card>
+          <mat-card-title-group>
+            <mat-card-title>{{expert.firstName}} "{{expert.username}}" {{expert.lastName}}</mat-card-title>
+            <mat-card-subtitle>
+              {{expert.description}}
+            </mat-card-subtitle>
+          </mat-card-title-group>
+
+        </mat-card>
+        <div class="img">
+          <img src="assets/expert.jpg" width="100%">
+        </div>
+      </div>
+      <div class="chipexpert">
+        <mat-card-content>
+          <mat-chip-list aria-label="Fish selection">
+            <mat-chip>Tag 1</mat-chip>
+            <mat-chip>Tag 2</mat-chip>
+            <mat-chip>Tag 3</mat-chip>
+            <mat-chip>Tag 4</mat-chip>
+            <mat-chip>Tag 1</mat-chip>
+          </mat-chip-list>
+        </mat-card-content>
+      </div>
+    </div>
+  </div>
+</div>
