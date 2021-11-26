@@ -14,10 +14,15 @@ import { RevisionComponent } from './components/revision/revision.component'
 import { ScheduleComponent } from './components/schedule/schedule.component'
 
 import { DetailexpertComponent } from './components/detailexpert/detailexpert.component'
+import { ReporteComponent } from './components/reporte/reporte.component';
 
 const routes: Routes = [
   {
     path: '',
+    pathMatch:'full', redirectTo:'login'
+  }, 
+  {
+    path: 'home',
     component: HomeComponent
   },
   {
@@ -72,7 +77,8 @@ const routes: Routes = [
   {
     path: 'expert/:expertId/schedule',
     component: ScheduleComponent
-  }
+  },
+  { path: 'reporte', component: ReporteComponent},
 
 ];
 

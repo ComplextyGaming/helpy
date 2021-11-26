@@ -19,7 +19,7 @@ import { MatInputModule }  from '@angular/material/input';
 import { MatFormFieldModule }  from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http'
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card'
 import { MatGridListModule } from '@angular/material/grid-list'
 import { MatChipsModule } from '@angular/material/chips'
@@ -32,6 +32,15 @@ import { GamesComponent } from './components/games/games.component';
 import { LoaderComponent } from './views/loader/loader.component';
 import { InfoExpertComponent } from './views/info-expert/info-expert.component';
 import { MenuExpertComponent } from './components/menu-expert/menu-expert.component'
+import { ReporteComponent } from './components/reporte/reporte.component'
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { LayoutComponent } from './components/layout/layout.component'
+import { environment } from 'src/environments/environment';
+import { JwtModule } from '@auth0/angular-jwt';
+
+export function tokenGetter() {
+  return sessionStorage.getItem(environment.TOKEN_NAME);
+}
 
 @NgModule({
   exports: [
@@ -49,6 +58,7 @@ import { MenuExpertComponent } from './components/menu-expert/menu-expert.compon
     MatChipsModule,
     MatProgressSpinnerModule,
     MatButtonModule,
+    PdfViewerModule,
   ],
   declarations: [
     AppComponent,
@@ -66,7 +76,9 @@ import { MenuExpertComponent } from './components/menu-expert/menu-expert.compon
     GamesComponent,
     LoaderComponent,
     InfoExpertComponent,
-    MenuExpertComponent
+    MenuExpertComponent,
+    ReporteComponent,
+    LayoutComponent
   ],
   imports: [
     HttpClientModule,
@@ -83,6 +95,18 @@ import { MenuExpertComponent } from './components/menu-expert/menu-expert.compon
     MatChipsModule,
     MatProgressSpinnerModule,
     MatButtonModule,
+    PdfViewerModule,
+    FormsModule,
+    ReactiveFormsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: [environment.HOST.substring(8)],
+        disallowedRoutes: [
+          `http://${environment.HOST.substring(8)}/login`,
+        ],
+      },
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
