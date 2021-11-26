@@ -12,31 +12,32 @@ import {MaterialService} from '../../services/material-service';
 })
 export class DetailexpertComponent implements OnInit {
 
-  params: any;
-  materials: any;
-  expertId: number;
+  expert: Expert
+  params: any
+  expertId: any
+  gameId: any
+  loading: any
 
-  constructor(private httpGenericService: HttpGenericService<Expert>,
-              private materialService: MaterialService,
-              private router: ActivatedRoute) {
+  constructor(private httpExpertService: HttpGenericService<Expert>, public router: ActivatedRoute) {
+    this.router.params.subscribe(data => {
+      this.params = data
+    })
 
-    this.router.params.subscribe(
-      (params) => {
-        this.params = params;
-      }
-    );
+    this.httpExpertService.setPath("https://helpy-api-upc.herokuapp.com/api/experts");
+    this.expertId = this.params.expertId
+    this.gameId = this.params.gameId
 
-    this.expertId = this.params.expertId;
-    this.httpGenericService.setPath('https://helpy-api-upc.herokuapp.com/api/experts');
+    this.expert = {} as Expert
   }
 
   ngOnInit(): void {
-    this.retrieveMaterials();
+    this.getExpertById()
   }
 
-  retrieveMaterials(): void {
-    this.materialService.getListMaterialByGameId(this.expertId).subscribe((response: any) => {
-      this.materials = response;
-    });
+  getExpertById(){
+    this.httpExpertService.getById(this.expertId).subscribe(data => {
+      this.expert = data
+      this.loading = true
+    })
   }
 }

@@ -1,49 +1,7 @@
-<div class="container-de">
-  <div>
-    <app-expert [id]=expertId></app-expert>
-  </div>
-  <div class="materials categories">
-    <p class="expert title">Materiales</p>
-      <div class="card-grid container">
-        <mat-card class="container-card" *ngFor="let material of materials">
-          <div class="crop-image">
-            <img src="assets/dota.png" alt="" width="100%">
-          </div>
-          <mat-card-subtitle>{{material.description}}</mat-card-subtitle>
-          <mat-card-actions class="container-actions">
-            <a  mat-raised-button class="button-detail" [routerLink]="['/', material.id]">{{material.cost}}</a>
-          </mat-card-actions>
-        </mat-card>
-    </div>
-    <div class="button">
-      <button mat-button>Materiales</button>
-    </div>
-  </div>
-  <div class="schedule categories">
-    <p class="expert title">Horarios</p>
-    <p class="expert desc">
-      orem ipsum dolor sit amet, consectetur
-      adipiscing elit, sed do eiusmod tempor
-      incididunt ut labore et dolore magna aliqua.
-      Ut enim ad minim v
-    </p>
-    <div class="button">
-      <button mat-button [routerLink]="['/schedule']">Horarios</button>
-    </div>
-  </div>
-  <div class="revision categories">
-    <p class="expert title">Revision</p>
-    <p class="expert desc">
-      orem ipsum dolor sit amet, consectetur
-      adipiscing elit, sed do eiusmod tempor
-      incididunt ut labore et dolore magna aliqua.
-      Ut enim ad minim v
-    </p>
-    <div class="button">
-      <button mat-button>Revisar</button>
-    </div>
-  </div>
-  <div class="social categories">
-    <p class="expert title">Mis redes:</p>
-  </div>
+<div *ngIf="loading; else loader">
+  <app-info-expert [expert]="expert"></app-info-expert>
+  <router-outlet></router-outlet>
 </div>
+<ng-template #loader>
+  <app-loader></app-loader>
+</ng-template>

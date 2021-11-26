@@ -10,7 +10,6 @@ import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './views/footer/footer.component';
 import { NavbarComponent } from './views/navbar/navbar.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { ExpertComponent } from './components/expert/expert.component';
 import { ListExpertsComponent } from './components/list-experts/list-experts.component';
 
 import { RouterModule } from '@angular/router'
@@ -31,6 +30,8 @@ import { RevisionComponent } from './components/revision/revision.component';
 import { ScheduleComponent } from './components/schedule/schedule.component'
 import { GamesComponent } from './components/games/games.component';
 import { LoaderComponent } from './views/loader/loader.component';
+import { InfoExpertComponent } from './views/info-expert/info-expert.component';
+import { MenuExpertComponent } from './components/menu-expert/menu-expert.component'
 import { ReporteComponent } from './components/reporte/reporte.component'
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { LayoutComponent } from './components/layout/layout.component'
@@ -67,7 +68,6 @@ export function tokenGetter() {
     FooterComponent,
     NavbarComponent,
     ProfileComponent,
-    ExpertComponent,
     ListExpertsComponent,
     MaterialsComponent,
     DetailexpertComponent,
@@ -75,6 +75,8 @@ export function tokenGetter() {
     ScheduleComponent,
     GamesComponent,
     LoaderComponent,
+    InfoExpertComponent,
+    MenuExpertComponent,
     ReporteComponent,
     LayoutComponent
   ],
