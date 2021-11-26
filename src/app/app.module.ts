@@ -31,6 +31,8 @@ import { RevisionComponent } from './components/revision/revision.component';
 import { ScheduleComponent } from './components/schedule/schedule.component'
 import { GamesComponent } from './components/games/games.component';
 import { LoaderComponent } from './views/loader/loader.component';
+import { ReporteComponent } from './components/reporte/reporte.component'
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { LayoutComponent } from './components/layout/layout.component'
 
 @NgModule({
@@ -49,6 +51,7 @@ import { LayoutComponent } from './components/layout/layout.component'
     MatChipsModule,
     MatProgressSpinnerModule,
     MatButtonModule,
+    PdfViewerModule,
   ],
   declarations: [
     AppComponent,
@@ -66,6 +69,7 @@ import { LayoutComponent } from './components/layout/layout.component'
     ScheduleComponent,
     GamesComponent,
     LoaderComponent,
+    ReporteComponent,
     LayoutComponent
   ],
   imports: [
@@ -83,6 +87,7 @@ import { LayoutComponent } from './components/layout/layout.component'
     MatChipsModule,
     MatProgressSpinnerModule,
     MatButtonModule,
+    PdfViewerModule,
     FormsModule,
     ReactiveFormsModule
   ],
