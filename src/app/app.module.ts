@@ -34,6 +34,12 @@ import { LoaderComponent } from './views/loader/loader.component';
 import { ReporteComponent } from './components/reporte/reporte.component'
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { LayoutComponent } from './components/layout/layout.component'
+import { environment } from 'src/environments/environment';
+import { JwtModule } from '@auth0/angular-jwt';
+
+export function tokenGetter() {
+  return sessionStorage.getItem(environment.TOKEN_NAME);
+}
 
 @NgModule({
   exports: [
@@ -89,7 +95,16 @@ import { LayoutComponent } from './components/layout/layout.component'
     MatButtonModule,
     PdfViewerModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: [environment.HOST.substring(8)],
+        disallowedRoutes: [
+          `http://${environment.HOST.substring(8)}/login`,
+        ],
+      },
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

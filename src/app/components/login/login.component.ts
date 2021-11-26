@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { JwtHelperService } from '@auth0/angular-jwt';
 import { LoginService } from 'src/app/services/login.service';
 import { UserService } from 'src/app/services/user.service';
 import { environment } from 'src/environments/environment';
@@ -15,6 +16,7 @@ export class LoginComponent implements OnInit {
   clave!: string;
   mensaje!: string;
   error!: string;
+  helper = new JwtHelperService();
 
   constructor(private loginService: LoginService, private userService: UserService,private router: Router) {}
 
@@ -23,7 +25,7 @@ export class LoginComponent implements OnInit {
   iniciarSesion() {
     this.loginService.login(this.usuario, this.clave).subscribe((data1) => {
       sessionStorage.setItem(environment.TOKEN_NAME, data1.access_token);
-      sessionStorage.setItem('email', this.usuario);
+      sessionStorage.setItem('email', this.helper.decodeToken(data1.access_token).user_name);
       this.userService.getUserByEmail(this.usuario).subscribe((data2) =>{
         console.log(data2)
         sessionStorage.setItem('id', data2.id)
