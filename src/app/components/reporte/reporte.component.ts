@@ -11,7 +11,7 @@ export class ReporteComponent implements OnInit {
 
   tipo: string = 'line';
   chart: any;
-  pdfSrc: string | undefined;
+  pdfSrc!: string;
   
   constructor(private reporteService: HttpReporteService) { }
 

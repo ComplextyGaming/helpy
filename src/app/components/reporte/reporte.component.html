@@ -13,8 +13,8 @@
 </div>
 
 <button mat-button color="primary" (click)="generarReporte()">Ver PDF</button>
-
 <pdf-viewer
+  *ngIf="pdfSrc"
   [src]="pdfSrc"
   [render-text]="true"
   style="display: block"
