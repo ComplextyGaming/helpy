@@ -1,1 +1,60 @@
-<p>profile works!</p>
+
+<div class="container-e">
+  <div class="conexpert">
+    <div class="expert">
+      <div class="infoexpert">
+        <mat-card>
+          <mat-card-title-group>
+            <mat-card-title>{{user.firstName}} "{{user.username}}" </mat-card-title>
+            <mat-card-subtitle>
+              Email: {{user.email}} <br><br>
+              Phone: {{user.phone}}
+            </mat-card-subtitle>
+            <mat-card-subtitle id="description">
+            {{expert.description}}
+            </mat-card-subtitle>
+          </mat-card-title-group>
+
+        </mat-card>
+        <div class="img">
+          <img src="assets/profileimg.png" width="100%">
+        </div>
+      </div>
+
+      <div *ngIf="isexpert" class="form-container">
+
+        <div class="input">
+          <input
+            placeholder="Cost"
+            name="cost"
+            class="cost"
+            [(ngModel)]="materialData.cost"
+
+            required
+          />
+        </div>
+        <div class="input">
+          <input
+            placeholder="Description"
+            name="description"
+            class="description"
+            [(ngModel)]="materialData.description"
+
+            required
+          />
+        </div>
+        <div class="input">
+          <input
+            placeholder="Discount"
+            name="discount"
+            class="discount"
+            [(ngModel)]="materialData.discount"
+            required
+          />
+        </div>
+        <button mat-button (click)="createMaterial()">Add Material</button>
+      </div>
+
+    </div>
+  </div>
+</div>

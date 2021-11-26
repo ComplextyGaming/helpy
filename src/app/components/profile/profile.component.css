@@ -1,0 +1,116 @@
+div.conexpert{
+  width: 100%;
+  background: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 650px;
+}
+
+div.container-e div.expert{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+div.container-e div.infoexpert{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+div.container-e div.infoexpert mat-card{
+  background: none;
+  box-shadow: none;
+  max-width: 500px;
+  text-align: justify;
+  margin: 0 5px;
+}
+
+div.container-e div.infoexpert mat-card mat-card-title{
+  font-size: 2.4rem;
+  margin-bottom: 35px;
+  font-weight: bold;
+}
+
+div.container-e div.infoexpert mat-card mat-card-subtitle{
+  font-size: 1.3rem;
+  color: var(--second);
+}
+
+div.container-e div.infoexpert mat-card img{
+  margin: 0 50px;
+}
+
+div.container-e div.infoexpert div.img{
+  width: 160px;
+  height: 160px;
+  background: var(--background-aux);
+  border-radius: 50%;
+}
+
+div.container-e div.chipexpert{
+  margin-top: 45px;
+  display: flex;
+  justify-content: center;
+}
+
+div.container-e mat-chip{
+  background: var(--background-aux);
+  color: var(--primary);
+}
+
+@media (max-width: 800px){
+
+  div.container-e div.infoexpert{
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+  }
+
+  div.container-e div.infoexpert mat-card{
+    text-align: center;
+  }
+
+}
+
+.title-container{
+  background: green ;
+}
+h1{
+  font-size: 70px;
+  color: white;
+}
+
+button{
+  background: var(--success);
+  color: var(--second);
+  font-size: 1.1rem;
+  border-radius: 1em;
+  padding: 0em 1.3em;
+  width: 150px;
+  margin: 100px auto;
+}
+
+
+.input{
+  width: 200px;
+  display: flex;
+  align-items: center;
+  margin: 1em auto 0;
+}
+
+input{
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.75em 0.7em;
+  border-radius: 0.5em;
+
+  outline: none;
+}
+.form-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

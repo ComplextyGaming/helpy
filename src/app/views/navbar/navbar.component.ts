@@ -8,9 +8,12 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class NavbarComponent implements OnInit {
 
+  userId: any
+
   constructor(public loginService: LoginService) { }
 
   ngOnInit(): void {
+    this.userId = sessionStorage.getItem('id');
   }
 
 }

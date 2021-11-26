@@ -31,4 +31,9 @@ export class MaterialService {
     return this.http.get<Material>(`https://helpy-api-upc.herokuapp.com/api/materials/expert/${id}`).pipe(retry(2), catchError(this.handleError))
   }
 
+  createMaterial(material: Material, expertId: Number, gameId: Number): Observable<Material> {
+    return this.http.post<Material>(`https://helpy-api-upc.herokuapp.com/api/materials/expert/${expertId}/game/${gameId}`,
+      JSON.stringify(material), this.httpOptions).pipe(retry(2), catchError(this.handleError));
+  }
+
 }

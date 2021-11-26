@@ -39,5 +39,6 @@ export class DetailexpertComponent implements OnInit {
       this.expert = data
       this.loading = true
     })
+    console.log(this.expert)
   }
 }
