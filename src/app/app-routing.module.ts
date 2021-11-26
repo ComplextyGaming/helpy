@@ -19,6 +19,10 @@ import { ReporteComponent } from './components/reporte/reporte.component';
 const routes: Routes = [
   {
     path: '',
+    pathMatch:'full', redirectTo:'login'
+  }, 
+  {
+    path: 'home',
     component: HomeComponent
   },
   {
@@ -38,7 +42,7 @@ const routes: Routes = [
     component: ExpertComponent
   },
   {
-    path: 'profile',
+    path: 'profile/:id',
     component: ProfileComponent
   },
   {
@@ -58,7 +62,7 @@ const routes: Routes = [
     component: RevisionComponent
   },
   {
-    path: 'schedule',
+    path: 'expert/:expertId/schedule',
     component: ScheduleComponent
   },
   { path: 'reporte', component: ReporteComponent},

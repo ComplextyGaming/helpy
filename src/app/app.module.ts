@@ -20,7 +20,7 @@ import { MatInputModule }  from '@angular/material/input';
 import { MatFormFieldModule }  from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http'
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card'
 import { MatGridListModule } from '@angular/material/grid-list'
 import { MatChipsModule } from '@angular/material/chips'
@@ -33,6 +33,7 @@ import { GamesComponent } from './components/games/games.component';
 import { LoaderComponent } from './views/loader/loader.component';
 import { ReporteComponent } from './components/reporte/reporte.component'
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { LayoutComponent } from './components/layout/layout.component'
 
 @NgModule({
   exports: [
@@ -68,7 +69,8 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     ScheduleComponent,
     GamesComponent,
     LoaderComponent,
-    ReporteComponent
+    ReporteComponent,
+    LayoutComponent
   ],
   imports: [
     HttpClientModule,
@@ -86,6 +88,8 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     MatProgressSpinnerModule,
     MatButtonModule,
     PdfViewerModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
