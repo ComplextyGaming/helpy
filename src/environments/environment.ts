@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  HOST: 'https://helpy-api-upc.herokuapp.com',
+  TOKEN_AUTH_USERNAME: 'hampmediapp',
+  TOKEN_AUTH_PASSWORD: 'hamp89codex',
+  TOKEN_NAME: 'access_token',
+  REINTENTOS: 2,
 };
 
 /*

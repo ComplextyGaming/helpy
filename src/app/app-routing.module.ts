@@ -18,6 +18,10 @@ import { DetailexpertComponent } from './components/detailexpert/detailexpert.co
 const routes: Routes = [
   {
     path: '',
+    pathMatch:'full', redirectTo:'login'
+  }, 
+  {
+    path: 'home',
     component: HomeComponent
   },
   {

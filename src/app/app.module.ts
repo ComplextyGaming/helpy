@@ -20,7 +20,7 @@ import { MatInputModule }  from '@angular/material/input';
 import { MatFormFieldModule }  from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http'
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card'
 import { MatGridListModule } from '@angular/material/grid-list'
 import { MatChipsModule } from '@angular/material/chips'
@@ -30,7 +30,8 @@ import { DetailexpertComponent } from './components/detailexpert/detailexpert.co
 import { RevisionComponent } from './components/revision/revision.component';
 import { ScheduleComponent } from './components/schedule/schedule.component'
 import { GamesComponent } from './components/games/games.component';
-import { LoaderComponent } from './views/loader/loader.component'
+import { LoaderComponent } from './views/loader/loader.component';
+import { LayoutComponent } from './components/layout/layout.component'
 
 @NgModule({
   exports: [
@@ -64,7 +65,8 @@ import { LoaderComponent } from './views/loader/loader.component'
     RevisionComponent,
     ScheduleComponent,
     GamesComponent,
-    LoaderComponent
+    LoaderComponent,
+    LayoutComponent
   ],
   imports: [
     HttpClientModule,
@@ -81,6 +83,8 @@ import { LoaderComponent } from './views/loader/loader.component'
     MatChipsModule,
     MatProgressSpinnerModule,
     MatButtonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
