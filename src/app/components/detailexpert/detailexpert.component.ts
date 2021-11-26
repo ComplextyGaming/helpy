@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Expert } from 'src/app/models/expert/expert';
-import { HttpGenericService } from '../../services/general/http-generic.service'
+import { HttpGenericService } from '../../services/general/http-generic.service';
+import {MaterialService} from '../../services/material-service';
 
 
 @Component({

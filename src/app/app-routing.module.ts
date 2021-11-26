@@ -32,8 +32,15 @@ const routes: Routes = [
     path: 'games',
     component: GamesComponent
   },
+  //{
+//    path: 'profile',
+//=======
+    //path: 'expert',
+    //component: ExpertComponent
+  //},
   {
-    path: 'profile',
+    path: 'profile/:id',
+//>>>>>>> 8b517d2387e48fda1ff6ec2e2b3eb7c018c666eb
     component: ProfileComponent
   },
   {
@@ -62,6 +69,10 @@ const routes: Routes = [
     path: 'revision',
     component: RevisionComponent
   },
+  {
+    path: 'expert/:expertId/schedule',
+    component: ScheduleComponent
+  }
 
 ];
 

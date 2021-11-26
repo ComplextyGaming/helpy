@@ -1,11 +1,11 @@
 export interface Expert {
-  brithdate: Date;
+  birthday: Date;
   description: string;
   email: string;
   firstName: string;
   gameId: number;
   id: number;
-  lastName: string,
-  phone: string,
-  username: string
+  lastName: string;
+  phone: string;
+  username: string;
 }

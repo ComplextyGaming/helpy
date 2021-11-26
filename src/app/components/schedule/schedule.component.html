@@ -1,1 +1,65 @@
-<p>schedule works!</p>
+<div class="container-s">
+  <h1>Sesiones</h1>
+  <mat-card class="example-card" *ngFor="let schedule of schedules">
+    <mat-card-content>
+      <p class="title">Sesion</p>
+      <p>Fecha {{ schedule.date }}</p>
+      <p>Estado {{ schedule.state }}</p>
+      <p>Esta habilitado las sesiones para los siguientes horarios.</p>
+      <p>Inicia a las {{ schedule.startHour }}:{{ schedule.startMin }}</p>
+      <p>Finaliza a las {{ schedule.finishHour }}:{{ schedule.finishMin }}</p>
+    </mat-card-content>
+    <div class="b">
+      <button mat-button>Solicitar</button>
+    </div>
+  </mat-card>
+</div>
+
+<style>
+  .container-s{
+    width: 100%;
+  }
+
+  .container-s mat-card{
+    margin: 0 auto;
+    border-radius: 20px;
+    max-width: 800px;
+  }
+
+  .container-s mat-card mat-card-title{
+    padding: 0.6em 0;
+    font-size: 1.6rem;
+  }
+
+  h1{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 0.9em 0;
+  }
+
+  .title{
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 0.5em 0;
+  }
+
+  mat-card-content{
+    margin: 0 20px;
+  }
+
+  div.b{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  button{
+    padding: 0.1em 2.5em;
+    border-radius: 5em;
+    background: var(--second);
+    color: var(--primary);
+    margin: 0 auto;
+  }
+</style>

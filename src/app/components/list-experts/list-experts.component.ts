@@ -23,8 +23,8 @@ export class ListExpertsComponent implements OnInit, OnDestroy {
 
 
   constructor(private httpDataServiceGame: HttpGenericService<Game>,
-    private httpDataExpert: HttpExpertService,
-    private route: ActivatedRoute) {
+              private httpDataExpert: HttpExpertService,
+              private route: ActivatedRoute) {
     this.route.params.subscribe(
       (params) => {
         this.params = params

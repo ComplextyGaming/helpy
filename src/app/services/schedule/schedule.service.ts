@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http'
 import { Observable, throwError } from 'rxjs'
 import { catchError, retry } from 'rxjs/operators'
-import { Expert } from 'src/app/models/expert/expert';
+import { Schedule } from 'src/app/models/schedule/schedule';
 
 @Injectable({
   providedIn: 'root'
 })
-export class HttpExpertService {
+export class ScheduleService {
 
   constructor(private http: HttpClient) { }
 
@@ -27,12 +27,8 @@ export class HttpExpertService {
     return throwError('Something happened with request')
   }
 
-  getListExpertByGameId(id: Number): Observable<Expert>{
-    return this.http.get<Expert>(`https://helpy-api-upc.herokuapp.com/api/games/${id}/experts`).pipe(retry(2), catchError(this.handleError));
-  }
-
-  getExperts(): Observable<Expert[]>{
-    return this.http.get<Expert[]>(`https://helpy-api-upc.herokuapp.com/api/experts`).pipe(retry(2), catchError(this.handleError));
+  getSchedulesByExpertId(id: Number): Observable<Schedule>{
+    return this.http.get<Schedule>(`https://helpy-api-upc.herokuapp.com/api/schedule/expert/${id}`).pipe(retry(2), catchError(this.handleError))
   }
 
 }
